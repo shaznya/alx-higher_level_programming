@@ -10,8 +10,3 @@ def pow(a, b):
         result *= a
 
     return result
-
-base = 2
-exponent = 3
-result = pow(base, exponent)
-print(result)
