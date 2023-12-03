@@ -3,7 +3,7 @@ import dis
 import hidden_4
 
 def print_function_names(module):
-    # Extract code objects from the module
+
     code_objects = [item for item in module.__dict__.values() if callable(item)]
 
     for code_object in code_objects:
