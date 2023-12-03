@@ -1,30 +1,18 @@
 #!/usr/bin/python3
-import marshal
+import importlib.util
 
-def extract_names_from_pyc(pyc_file):
-    with open(pyc_file, 'rb') as file:
-        magic = file.read(4)
-        if magic != b'\x03\xf3\r\n':
-            raise ValueError("Not a valid Python 3.8 bytecode file.")
+def print_module_names(file_path):
+    module_name = "module_name"  # Choose a name for the temporary module
 
-        file.read(8)
+    spec = importlib.util.spec_from_file_location(module_name, file_path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
 
-        names = set()
-        try:
-            while True:
-                try:
-                    code = marshal.load(file)
-                except EOFError:
-                    break
+    names = [name for name in dir(module) if not name.startswith('__')]
 
-                if isinstance(code, type((lambda: 0).__code__)):
-                    names.update(code.co_names)
-        except Exception as e:
-            print(f"An error occurred: {e}")
-
-    filtered_names = sorted(name for name in names if not name.startswith("__"))
-    for name in filtered_names:
+    for name in sorted(names):
         print(name)
 
 if __name__ == "__main__":
-    extract_names_from_pyc("hidden_4.pyc")
+    file_path = "hidden_4.pyc"
+    print_module_names(file_path)
