@@ -4,5 +4,6 @@ import dis
 def magic_calculation(a, b):
     result = b**a + 98
     return result
-dis.dis(magic_calculation)
-
+disassembly = dis.Bytecode(magic_calculation)
+for instruction in disassembly:
+    print(instruction)
