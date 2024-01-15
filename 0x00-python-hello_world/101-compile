@@ -1,26 +1,35 @@
-#!/usr/bin/env python
-import os
-import py_compile
+#!/bin/bash
 
-def compile_python_script():
-    # Get the Python file name from the environment variable
-    pyfile = os.environ.get('PYFILE')
+# Check if PYFILE environment variable is set
+if [ -z "$PYFILE" ]; then
+    echo "Error: PYFILE environment variable not set."
+    exit 1
+fi
 
-    if not pyfile:
-        print("Error: PYFILE environment variable is not set.")
-        return
+# Extract the file name without extension
+filename=$(basename -- "$PYFILE")
+filename_noext="${filename%.*}"
 
-    # Ensure the file exists
-    if not os.path.exists(pyfile):
-        print(f"Error: File '{pyfile}' not found.")
-        return
+# Compile the Python script
+echo "Compiling $PYFILE ..."
+python3 -m py_compile "$PYFILE"
 
-    # Compile the Python script
-    try:
-        py_compile.compile(pyfile, cfile=pyfile + 'c', doraise=True)
-        print(f"Compilation successful. Output saved to {pyfile}c")
-    except py_compile.PyCompileError as e:
-        print(f"Compilation failed: {e}")
+# Check if compilation was successful
+if [ $? -eq 0 ]; then
+    # Get the cache tag for the current Python version
+    cache_tag=$(python3 -c 'import sys; print(sys.implementation.cache_tag)')
 
-if __name__ == "__main__":
-    compile_python_script()
+    # Determine the compiled file path
+    compiled_filename="__pycache__/$filename_noext.$cache_tag.pyc"
+
+    # Rename the compiled file
+    mv "$compiled_filename" "$filename_noext.pyc"
+
+    # Remove the __pycache__ directory
+    rm -r "__pycache__"
+
+    echo "Compilation successful. Compiled file: $filename_noext.pyc"
+else
+    echo "Compilation failed."
+fi
+
