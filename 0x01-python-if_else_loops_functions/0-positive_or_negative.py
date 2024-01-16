@@ -6,4 +6,4 @@ if number > 0:
 elif number == 0:
     print(f"{numbeer:d} is zero")
 else:
-    print(f"{number:d} is negative")
+    print(f"{number:f} is negative")
