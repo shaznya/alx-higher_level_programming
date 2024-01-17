@@ -10,5 +10,4 @@ def pow(a, b):
     # Calculate a^b using a loop
     for _ in range(b):
         result *= a
-    
-    return result
+        return round(result, 2)
