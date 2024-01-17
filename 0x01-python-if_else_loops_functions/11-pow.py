@@ -6,5 +6,5 @@ def pow(a, b):
         b = -b
     for _ in range(b):
         result *= a
-
-    return result
+        result = round(result, 15)
+        return result
