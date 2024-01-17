@@ -1,4 +1,9 @@
 #!/usr/bin/python3
-def uppercase(str):
-    for i in str(ord('A'), ord('Z') + 1):
-        print("{}".format(chr(i)))
+def uppercase(s):
+    modified_string = ""
+    for char in s:
+        if 'a' <= char <= 'z':
+            modified_string += chr(ord(char) - ord('a') + ord('A'))
+        else:
+            modified_string += char
+    print(f"{modified_string}\n", end='')
