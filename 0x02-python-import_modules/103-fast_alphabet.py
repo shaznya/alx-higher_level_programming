@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-from string import ascii_uppercase; getattr(__import__('os'), 'write')(1, bytes(ascii_uppercase + '\n', 'utf-8'))
+_ = [*map(lambda x: print(chr(x), end=''), range(ord('A'), ord('Z') + 1))]
