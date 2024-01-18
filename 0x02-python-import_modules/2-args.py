@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-from sys import argv
+if __name__ == "__main__":
+    import sys
 
-num_args = len(argv) - 1
-plural_suffix = 's' if num_args != 1 else ''
+    argc = len(sys.argv) - 1
+    plural_s = "s" if argc != 1 else ""
+    period = "." if argc == 0 else ":"
 
-print("{} argument{}{}.".format(num_args, plural_suffix, '' if num_args == 0 else ':'))
+    print(f"{argc} argument{plural_s}{period}")
 
-if num_args > 0:
-    for i, arg in enumerate(argv[1:], start=1):
-        print("{}: {}".format(i, arg))
+    for i in range(1, argc + 1):
+        print(f"{i}: {sys.argv[i]}")
