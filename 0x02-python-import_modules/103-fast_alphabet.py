@@ -1,2 +1,3 @@
 #!/usr/bin/python3
-_ = [*map(lambda x: print(chr(x), end=''), range(ord('A'), ord('Z') + 1))]
+import string
+print(''.join([*string.ascii_uppercase]), end='\n')
