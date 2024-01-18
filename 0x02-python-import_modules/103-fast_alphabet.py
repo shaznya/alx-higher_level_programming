@@ -1,3 +1,2 @@
 #!/usr/bin/python3
-import string
-print(''.join([*string.ascii_uppercase]), end='\n')
+print(''.join(chr(i) for i in range(ord('A'), ord('Z')+1)) + '\n')
