@@ -1,2 +1,3 @@
 #!/usr/bin/python3
-print(''.join(chr(i) for i in range(ord('A'), ord('Z')+1)) + '\n')
+import string
+print(print(*getattr(string, '_').__add__(getattr(string.ascii_uppercase, '_'))().split('_'), sep='') + '\n')
