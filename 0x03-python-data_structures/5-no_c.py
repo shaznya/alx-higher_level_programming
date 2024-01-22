@@ -2,6 +2,6 @@
 def no_c(my_string):
     result = ""
     for char in my_string:
-        if char.lower() != 'c' and char.lower() != 'C':
+        if char.lower() != 'c' and char.upper() != 'C':
             result += char
-            return result
+    return result
