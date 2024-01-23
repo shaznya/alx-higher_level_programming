@@ -1,13 +1,20 @@
 #!/usr/bin/python3
-import marshal
+import dis
 
-def print_module_names(file_path):
-    with open(file_path, 'rb') as f:
-        code = marshal.load(f)
+def get_names_from_pyc(file_path):
+    with open(file_path, 'rb') as file:
+        magic_number = file.read(4)
+        modification_time = file.read(4)
+        code_object = compile(file.read(), '<string>', 'exec')
 
-    module_names = [name for name in code.co_names if not name.startswith('__')]
-    module_names.sort()
+    names = [name for name in dir(code_object) if not name.startswith('__')]
+    names.sort()
 
-    for name in module_names:
+    return names
+
+if __name__ == "__main__":
+    file_path = "hidden_4.pyc"
+    names = get_names_from_pyc(file_path)
+
+    for name in names:
         print(name)
-        print_module_names('hidden_4.pyc')
