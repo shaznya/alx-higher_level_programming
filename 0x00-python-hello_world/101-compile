@@ -1,0 +1,13 @@
+#!/bin/bash
+if [ -z "$PYFILE" ]; then
+  echo "PYFILE environment variable is not set."
+  exit 1
+fi
+echo "Compiling $PYFILE ..."
+python3 -m compileall -b -o "./" "$PYFILE"
+if [ $? -eq 0 ]; then
+  mv "${PYFILE}__pycache__/${PYFILE%.py}.cpython-38.pyc" "${PYFILE%.py}.pyc"
+  echo "Compilation successful."
+else
+  echo "Compilation failed."
+fi
