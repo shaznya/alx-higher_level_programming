@@ -1,3 +1,4 @@
 #!/usr/bin/python3
 for i in range(122, 96, -1):
-    print("{:c}".format(i) if (122 - i) % 2 == 0 else "{:c}".format(i).upper(), end="")
+    char = "{:c}".format(i)
+    print(char if (122 - i) % 2 == 0 else char.upper(), end="")
