@@ -1,3 +1,5 @@
 #!/usr/bin/python3
+output = ''
 for i in range(90, 64, -1):
-    print(chr(i % 2 * 32 + i), end='')
+    output += '{}'.format(chr(i % 2 * 32 + i))
+print(output, end='')
