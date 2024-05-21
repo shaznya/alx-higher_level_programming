@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-import string
-_ = print(*(c for c in string.ascii_uppercase), sep='\n')
+import sys
+sys.stdout.buffer.write(bytes(range(65,91)))
