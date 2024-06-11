@@ -1,7 +1,11 @@
 #!/usr/bin/python3
+"""
+square.py
+This module contains an empty class Square.
+"""
+
 class Square:
     """
-    Empty class Square that defines a square.
+    Square is an empty class that defines a square.
     """
-    def __init__(self):
-        pass
+    pass
