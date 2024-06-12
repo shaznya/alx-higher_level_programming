@@ -1,11 +1,15 @@
 #!/usr/bin/python3
 """
-square.py
-This module contains an empty class Square.
+This module defines an empty class Square.
 """
 
 class Square:
     """
-    Square is an empty class that defines a square.
+    This class defines a square.
     """
+    pass
+
+if __name__ == "__main__":
+    # This block is executed only if this script is run directly
+    # For now, it doesn't do anything
     pass
