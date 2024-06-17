@@ -1,17 +1,12 @@
 #!/usr/bin/python3
-"""This module defines a Square class."""
+"""Define a Square class."""
 
 
 class Square:
-    """Represents a square.
-
-    Attributes:
-        size (int): The size of the square.
-        position (tuple): The position of the square.
-    """
+    """Represent a square."""
 
     def __init__(self, size=0, position=(0, 0)):
-        """Initializes a Square instance.
+        """Initialize a square.
 
         Args:
             size (int): The size of the square.
@@ -27,7 +22,7 @@ class Square:
 
     @size.setter
     def size(self, value):
-        """Sets the size of the square.
+        """Set the size of the square.
 
         Args:
             value (int): The size of the square.
@@ -49,7 +44,7 @@ class Square:
 
     @position.setter
     def position(self, value):
-        """Sets the position of the square.
+        """Set the position of the square.
 
         Args:
             value (tuple): The position of the square.
@@ -64,7 +59,7 @@ class Square:
         self.__position = value
 
     def area(self):
-        """Calculates the area of the square.
+        """Calculate the area of the square.
 
         Returns:
             int: The area of the square.
@@ -72,7 +67,7 @@ class Square:
         return self.size ** 2
 
     def my_print(self):
-        """Prints a representation of the square."""
+        """Print the square with the character '#'."""
         if self.size == 0:
             print()
             return
@@ -84,5 +79,10 @@ class Square:
 
 
 if __name__ == "__main__":
-    square = Square(3, (1, 2))
-    square.my_print()
+    my_square = Square(5, (0, 0))
+    my_square.my_print()
+
+    print("--")
+
+    my_square = Square(5, (4, 1))
+    my_square.my_print()
