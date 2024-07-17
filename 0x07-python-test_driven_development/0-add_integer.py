@@ -5,8 +5,8 @@ def add_integer(a, b=98):
     Adds two integers.
 
     Args:
-        a (int or float): The first number to be added.
-        b (int or float, optional): The second number to be added. Defaults to 98.
+        a (int or float)
+        b (int or float, optional):
 
     Raises:
         TypeError: If a or b is not an integer or float.
