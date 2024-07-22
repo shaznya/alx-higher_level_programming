@@ -1,0 +1,45 @@
+The `lazy_matrix_mul` function from `101-lazy_matrix_mul` module
+===============================================================
+
+Using `lazy_matrix_mul`
+-----------------------
+
+Import the function:
+
+    >>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+Multiplying matrices:
+
+    >>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+    [[7, 10], [15, 22]]
+    >>> lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+    [[13, 16]]
+
+Handling empty matrices:
+
+    >>> lazy_matrix_mul([[]], [[1]])
+    Traceback (most recent call last):
+        ...
+    ValueError: m_a can't be empty
+    >>> lazy_matrix_mul([[1]], [[]])
+    Traceback (most recent call last):
+        ...
+    ValueError: m_b can't be empty
+
+Handling invalid types:
+
+    >>> lazy_matrix_mul([[1, 2]], [[3, 'a'], [5, 6]])
+    Traceback (most recent call last):
+        ...
+    TypeError: m_b should contain only integers or floats
+    >>> lazy_matrix_mul([[1, 2]], 'invalid')
+    Traceback (most recent call last):
+        ...
+    TypeError: m_b must be a list of lists
+
+Handling incompatible dimensions:
+
+    >>> lazy_matrix_mul([[1, 2]], [[3, 4, 5], [6, 7, 8]])
+    Traceback (most recent call last):
+        ...
+    ValueError: m_a and m_b can't be multiplied
