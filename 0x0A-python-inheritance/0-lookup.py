@@ -1,25 +1,18 @@
 #!/usr/bin/python3
+"""
+This module provides a function to retrieve the list of attributes and methods
+of an object.
+"""
+
 def lookup(obj):
     """
-    Returns a list of available attributes and methods of an object.
+    Return a list of available attributes and methods of an object.
 
     Args:
         obj: The object to inspect.
 
     Returns:
-        A list of strings representing the names of attributes and methods.
+        list: A list of strings representing the names of available attributes
+        and methods of the object.
     """
     return dir(obj)
-
-if __name__ == "__main__":
-    class MyClass1:
-        """A sample class for demonstration."""
-        pass
-
-    class MyClass2:
-        """Another sample class with an attribute and a method."""
-        my_attr1 = 3
-
-        def my_meth(self):
-            """A sample method."""
-            pass
