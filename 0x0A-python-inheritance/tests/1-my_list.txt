@@ -11,9 +11,6 @@ Import the class:
 Creating an instance of `MyList`:
 
     >>> my_list = MyList([3, 1, 2])
-
-Printing the list in sorted order:
-
     >>> my_list.print_sorted()
     [1, 2, 3]
 
