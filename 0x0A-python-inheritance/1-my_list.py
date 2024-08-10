@@ -34,6 +34,5 @@ class MyList(list):
         >>> my_list.print_sorted()
         []
         """
-        sorted_list = self[:]
-        sorted_list.sort()
+        sorted_list = sorted(self)
         print(sorted_list)

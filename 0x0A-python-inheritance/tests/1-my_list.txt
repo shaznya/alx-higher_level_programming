@@ -1,12 +1,12 @@
-The `MyList` class from `my_list` module
-========================================
+The `MyList` class from `1-my_list` module
+==========================================
 
 Using `MyList`
 --------------
 
 Import the class:
 
-    >>> MyList = __import__('my_list').MyList
+    >>> MyList = __import__('1-my_list').MyList
 
 Creating an instance of `MyList`:
 
