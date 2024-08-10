@@ -8,7 +8,7 @@ Import the class:
 
     >>> MyList = __import__('1-my_list').MyList
 
-Creating an instance of `MyList`:
+Creating an instance of `MyList` and using `print_sorted`:
 
     >>> my_list = MyList([3, 1, 2])
     >>> my_list.print_sorted()
