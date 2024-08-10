@@ -1,13 +1,36 @@
->>> from my_list import MyList
->>> my_list = MyList([3, 1, 2])
->>> my_list.print_sorted()
-[1, 2, 3]
->>> my_list = MyList([5, 7, 2, 4])
->>> my_list.print_sorted()
-[2, 4, 5, 7]
->>> my_list = MyList([10, 5])
->>> my_list.print_sorted()
-[5, 10]
->>> my_list = MyList([])
->>> my_list.print_sorted()
-[]
+The `MyList` class from `my_list` module
+========================================
+
+Using `MyList`
+--------------
+
+Import the class:
+
+    >>> MyList = __import__('my_list').MyList
+
+Creating an instance of `MyList`:
+
+    >>> my_list = MyList([3, 1, 2])
+
+Printing the list in sorted order:
+
+    >>> my_list.print_sorted()
+    [1, 2, 3]
+
+Creating another instance with different values:
+
+    >>> my_list = MyList([5, 7, 2, 4])
+    >>> my_list.print_sorted()
+    [2, 4, 5, 7]
+
+Creating an instance with only two elements:
+
+    >>> my_list = MyList([10, 5])
+    >>> my_list.print_sorted()
+    [5, 10]
+
+Creating an instance with an empty list:
+
+    >>> my_list = MyList([])
+    >>> my_list.print_sorted()
+    []
