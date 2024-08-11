@@ -7,13 +7,14 @@ This module defines a class `MyList` that inherits from the built-in
 
 class MyList(list):
     """
-    A class that inherits from the built-in `list` class and
-    includes a method to print the list in ascending sorted order.
+    A class that inherits from the built-in `list` class.
+
+    It includes a method to print the list in ascending sorted order.
     """
 
     def print_sorted(self):
         """
-        Prints the list in ascending sorted order.
+        Prints the list elements in ascending sorted order.
         """
         sorted_list = sorted(self)
         print(sorted_list)
