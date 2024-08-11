@@ -1,32 +1,33 @@
 The `say_my_name` function from `3-say_my_name` module
-=========================================================
+==============================================
 
 Using `say_my_name`
-----------------------
+-------------------
 
 Import the function:
 
     >>> say_my_name = __import__('3-say_my_name').say_my_name
 
-Valid cases:
+Printing a full name:
 
-    >>> say_my_name("John", "Smith")
-    My name is John Smith
+    >>> say_my_name("John", "Doe")
+    My name is John Doe
 
-    >>> say_my_name("Walter", "White")
-    My name is Walter White
+Printing with only a first name:
 
-    >>> say_my_name("Bob")
-    My name is Bob 
+    >>> say_my_name("John")
+    My name is John 
 
-Handling incorrect types:
+Handling invalid last name:
 
-    >>> say_my_name(12, "White")
-    Traceback (most recent call last):
-        ...
-    TypeError: first_name must be a string
-
-    >>> say_my_name("Bob", 34)
+    >>> say_my_name("John", 123)
     Traceback (most recent call last):
         ...
     TypeError: last_name must be a string
+
+Handling invalid first name:
+
+    >>> say_my_name(123, "Doe")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
