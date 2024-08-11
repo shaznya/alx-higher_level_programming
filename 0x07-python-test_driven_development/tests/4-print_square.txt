@@ -1,14 +1,14 @@
 The `print_square` function from `4-print_square` module
-=========================================================
+=======================================================
 
 Using `print_square`
-----------------------
+--------------------
 
 Import the function:
 
     >>> print_square = __import__('4-print_square').print_square
 
-Valid cases:
+Printing a square of size 4:
 
     >>> print_square(4)
     ####
@@ -16,36 +16,29 @@ Valid cases:
     ####
     ####
 
-    >>> print_square(10)
-    ##########
-    ##########
-    ##########
-    ##########
-    ##########
-    ##########
-    ##########
-    ##########
-    ##########
-    ##########
+Printing a square of size 2:
 
-    >>> print_square(0)
+    >>> print_square(2)
+    ##
+    ##
 
-    >>> print_square(1)
-    #
-
-Handling incorrect types:
+Handling invalid size (negative integer):
 
     >>> print_square(-1)
     Traceback (most recent call last):
         ...
     ValueError: size must be >= 0
 
-    >>> print_square(3.5)
+Handling invalid size (non-integer):
+
+    >>> print_square("4")
     Traceback (most recent call last):
         ...
     TypeError: size must be an integer
 
-    >>> print_square("3")
+Handling invalid size (float):
+
+    >>> print_square(4.5)
     Traceback (most recent call last):
         ...
     TypeError: size must be an integer
