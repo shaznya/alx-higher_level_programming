@@ -1,58 +1,51 @@
-The ``add_integer`` function from ``0-add_integer`` module
-=======================================================
+The `add_integer` function from `0-add_integer` module
+=====================================================
 
-Using ``add_integer``
----------------------
+Using `add_integer`
+-------------------
 
 Import the function:
 
     >>> add_integer = __import__('0-add_integer').add_integer
 
-Adding two positive integers:
+Testing with integers:
 
     >>> add_integer(1, 2)
     3
 
-Adding two negative integers:
-
-    >>> add_integer(-1, -2)
-    -3
-
-Adding a positive and a negative integer:
-
-    >>> add_integer(1, -2)
-    -1
-
-Adding floats:
+Testing with floats:
 
     >>> add_integer(1.5, 2.5)
     3
 
-Adding a float and an integer:
+Testing with mixed types:
 
     >>> add_integer(1.5, 2)
     3
 
-Adding None values:
+Testing with default value for b:
 
-    >>> add_integer(None)
+    >>> add_integer(1)
+    99
+
+Testing with invalid types for a and b:
+
+    >>> add_integer("1", 2)
     Traceback (most recent call last):
         ...
     TypeError: a must be an integer
 
-    >>> add_integer(1, None)
+    >>> add_integer(1, "2")
     Traceback (most recent call last):
         ...
     TypeError: b must be an integer
 
-Adding strings:
-
-    >>> add_integer(1, "School")
-    Traceback (most recent call last):
-        ...
-    TypeError: b must be an integer
-
-    >>> add_integer("School", 1)
+    >>> add_integer([1], 2)
     Traceback (most recent call last):
         ...
     TypeError: a must be an integer
+
+    >>> add_integer(1, [2])
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
