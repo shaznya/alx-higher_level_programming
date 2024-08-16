@@ -1,14 +1,14 @@
 The append_write function from 2-append_write module
-====================================================
+===================================================
 
 Using append_write
 ------------------
 
-Create or append to a file named `file_append.txt` with the following content:
+Append the following content to a file named `file_append.txt`:
 
     This School is so cool!
 
-To test the function, run the script directly. Ensure that the `file_append.txt` file is in the same directory as `2-append_write.py`.
+If the file doesn't exist, it should be created. If it already exists, the text should be appended to the end of the file.
 
 Example:
 
@@ -17,7 +17,7 @@ Example:
     >>> nb_characters_added
     24
 
-Check the content of `file_append.txt`:
+Check the content of `file_append.txt`. It should now contain two lines with the appended text:
 
     >>> with open("file_append.txt", 'r', encoding='utf-8') as file:
     ...     content = file.read()
