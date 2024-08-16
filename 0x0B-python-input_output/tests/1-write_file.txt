@@ -1,0 +1,25 @@
+The write_file function from 1-write_file module
+===============================================
+
+Using write_file
+----------------
+
+Create or overwrite a file named `my_first_file.txt` with the following content:
+
+    This School is so cool!
+
+To test the function, run the script directly. Ensure that the `my_first_file.txt` file is in the same directory as `1-write_file.py`.
+
+Example:
+
+    >>> write_file = __import__('1-write_file').write_file
+    >>> nb_characters = write_file("my_first_file.txt", "This School is so cool!\n")
+    >>> nb_characters
+    24
+
+Check the content of `my_first_file.txt`:
+
+    >>> with open("my_first_file.txt", 'r', encoding='utf-8') as file:
+    ...     content = file.read()
+    >>> content
+    'This School is so cool!\n'
