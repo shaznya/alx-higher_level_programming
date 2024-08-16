@@ -1,0 +1,25 @@
+The append_write function from 2-append_write module
+====================================================
+
+Using append_write
+------------------
+
+Create or append to a file named `file_append.txt` with the following content:
+
+    This School is so cool!
+
+To test the function, run the script directly. Ensure that the `file_append.txt` file is in the same directory as `2-append_write.py`.
+
+Example:
+
+    >>> append_write = __import__('2-append_write').append_write
+    >>> nb_characters_added = append_write("file_append.txt", "This School is so cool!\n")
+    >>> nb_characters_added
+    24
+
+Check the content of `file_append.txt`:
+
+    >>> with open("file_append.txt", 'r', encoding='utf-8') as file:
+    ...     content = file.read()
+    >>> content
+    'This School is so cool!\nThis School is so cool!\n'
