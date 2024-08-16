@@ -1,0 +1,21 @@
+The read_file function from 0-read_file module
+==============================================
+
+Using read_file
+--------------
+
+Create a file named `my_file_0.txt` with the following content:
+
+    We offer a truly innovative approach to education:
+    focus on building reliable applications and scalable systems, take on real-world challenges, collaborate with your peers.
+
+    A school every software engineer would have dreamt of!
+
+To test the function, run the script directly. Ensure that the `my_file_0.txt` file is in the same directory as `0-read_file.py`.
+
+Expected output when running the script:
+
+    We offer a truly innovative approach to education:
+    focus on building reliable applications and scalable systems, take on real-world challenges, collaborate with your peers.
+
+    A school every software engineer would have dreamt of!
