@@ -8,5 +8,5 @@ def read_file(filename=""):
         filename (str): The path to the file to be read. Defaults to an empty string.
     """
     with open(filename, 'r', encoding='utf-8') as file:
-        # Read and print the content of the file
-        print(file.read(), end='')
+        for line in file:
+            print(line, end='')
