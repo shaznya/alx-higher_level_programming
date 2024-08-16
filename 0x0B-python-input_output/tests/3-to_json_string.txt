@@ -1,0 +1,41 @@
+The to_json_string function from 3-to_json_string module
+=======================================================
+
+Using to_json_string
+--------------------
+
+Convert a list to its JSON string representation:
+
+    >>> to_json_string = __import__('3-to_json_string').to_json_string
+    >>> s_my_list = to_json_string([1, 2, 3])
+    >>> s_my_list
+    '[1, 2, 3]'
+    >>> type(s_my_list)
+    <class 'str'>
+
+Convert a dictionary to its JSON string representation:
+
+    >>> my_dict = {
+    ...     'id': 12,
+    ...     'name': "John",
+    ...     'places': ["San Francisco", "Tokyo"],
+    ...     'is_active': True,
+    ...     'info': {
+    ...         'age': 36,
+    ...         'average': 3.14
+    ...     }
+    ... }
+    >>> s_my_dict = to_json_string(my_dict)
+    >>> s_my_dict
+    '{"id": 12, "name": "John", "places": ["San Francisco", "Tokyo"], "is_active": true, "info": {"age": 36, "average": 3.14}}'
+    >>> type(s_my_dict)
+    <class 'str'>
+
+Handle an exception when trying to serialize an unsupported object type (e.g., a set):
+
+    >>> try:
+    ...     my_set = {132, 3}
+    ...     s_my_set = to_json_string(my_set)
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [TypeError] Object of type set is not JSON serializable
