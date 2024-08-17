@@ -9,9 +9,6 @@ def to_json_string(my_obj):
 
     Returns:
         A JSON string representation of the object.
-
-    Raises:
-        TypeError: If the object type is not serializable to JSON.
     """
     if isinstance(my_obj, str):
         return '"' + my_obj.replace('"', '\\"') + '"'
@@ -27,6 +24,8 @@ def to_json_string(my_obj):
             for k, v in my_obj.items()
         ]
         return '{' + ', '.join(items) + '}'
+    elif my_obj is None:
+        return "null"
     else:
         raise TypeError(f"Object of type {type(my_obj).__name__} is not JSON serializable")
 
