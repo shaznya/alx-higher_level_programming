@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-import json
-
 
 def to_json_string(my_obj):
     """
@@ -12,4 +10,21 @@ def to_json_string(my_obj):
     Returns:
         A JSON string representation of the object.
     """
-    return json.dumps(my_obj)
+    if isinstance(my_obj, str):
+        return '"' + my_obj.replace('"', '\\"') + '"'
+    elif isinstance(my_obj, bool):
+        return "true" if my_obj else "false"
+    elif isinstance(my_obj, (int, float)):
+        return str(my_obj)
+    elif isinstance(my_obj, list):
+        return '[' + ', '.join(to_json_string(e) for e in my_obj) + ']'
+    elif isinstance(my_obj, dict):
+        items = [
+            f'{to_json_string(k)}: {to_json_string(v)}'
+            for k, v in my_obj.items()
+        ]
+        return '{' + ', '.join(items) + '}'
+    else:
+        raise TypeError(
+            f"Object of type {type(my_obj).__name__} is not JSON serializable"
+        )
