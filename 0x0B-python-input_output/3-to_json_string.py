@@ -2,13 +2,16 @@
 
 def to_json_string(my_obj):
     """
-    Returns the JSON representation of an object (string).
+    Converts an object to its JSON string representation.
 
     Args:
-        my_obj: The object to convert to JSON.
+        my_obj: The object to convert (e.g., list, dict, int, float, bool, str).
 
     Returns:
         A JSON string representation of the object.
+
+    Raises:
+        TypeError: If the object type is not serializable to JSON.
     """
     if isinstance(my_obj, str):
         return '"' + my_obj.replace('"', '\\"') + '"'
@@ -25,6 +28,8 @@ def to_json_string(my_obj):
         ]
         return '{' + ', '.join(items) + '}'
     else:
-        raise TypeError(
-            f"Object of type {type(my_obj).__name__} is not JSON serializable"
-        )
+        raise TypeError(f"Object of type {type(my_obj).__name__} is not JSON serializable")
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testfile('tests/3-to_json_string.txt')
