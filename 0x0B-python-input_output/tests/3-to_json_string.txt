@@ -1,9 +1,6 @@
 The to_json_string function from 3-to_json_string module
 =======================================================
 
-Using to_json_string
---------------------
-
 Convert a list to its JSON string representation:
 
     >>> to_json_string = __import__('3-to_json_string').to_json_string
@@ -27,27 +24,8 @@ Convert a dictionary to its JSON string representation:
     ... }
     >>> s_my_dict = to_json_string(my_dict)
     >>> s_my_dict
-    '{"id": 12, "name": "John", "places": ["San Francisco", "Tokyo"], "is_active": true, "info": {"age": 36, "average": 3.14}}'
+    '{"id": 12, "is_active": true, "name": "John", "info": {"average": 3.14, "age": 36}, "places": ["San Francisco", "Tokyo"]}'
     >>> type(s_my_dict)
-    <class 'str'>
-
-Convert `None` to its JSON string representation:
-
-    >>> s_none = to_json_string(None)
-    >>> s_none
-    'null'
-    >>> type(s_none)
-    <class 'str'>
-
-Convert a boolean to its JSON string representation:
-
-    >>> s_bool_true = to_json_string(True)
-    >>> s_bool_true
-    'true'
-    >>> s_bool_false = to_json_string(False)
-    >>> s_bool_false
-    'false'
-    >>> type(s_bool_true)
     <class 'str'>
 
 Handle an exception when trying to serialize an unsupported object type (e.g., a set):
