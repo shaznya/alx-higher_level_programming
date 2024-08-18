@@ -3,6 +3,7 @@
 
 import json
 
+
 def to_json_string(my_obj):
     """Converts a Python object to a JSON string.
 
@@ -13,6 +14,7 @@ def to_json_string(my_obj):
         str: The JSON string representation of the object.
     """
     return json.dumps(my_obj)
+
 
 if __name__ == '__main__':
     # Example usage
