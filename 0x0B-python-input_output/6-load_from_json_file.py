@@ -19,7 +19,7 @@ def load_from_json_file(filename):
 
 if __name__ == '__main__':
     # Example usage
-    # Make sure to create a sample JSON file named 'example.json' before running this
+    # Make sure to create a sample JSON file named
     try:
         obj = load_from_json_file('example.json')
         print("Loaded object:", obj)
