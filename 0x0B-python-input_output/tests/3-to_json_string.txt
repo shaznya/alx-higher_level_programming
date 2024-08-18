@@ -23,8 +23,9 @@ Convert a dictionary to its JSON string representation:
     ...     }
     ... }
     >>> s_my_dict = to_json_string(my_dict)
-    >>> s_my_dict
-    '{"id": 12, "is_active": true, "name": "John", "info": {"average": 3.14, "age": 36}, "places": ["San Francisco", "Tokyo"]}'
+    >>> import json
+    >>> json.loads(s_my_dict) == my_dict
+    True
     >>> type(s_my_dict)
     <class 'str'>
 
