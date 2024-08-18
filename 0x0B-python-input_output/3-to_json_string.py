@@ -1,24 +1,27 @@
 #!/usr/bin/python3
+"""Converts a Python object to a JSON string representation."""
+
+import json
 
 def to_json_string(my_obj):
+    """Converts a Python object to a JSON string.
+
+    Args:
+        my_obj (object): The Python object to convert to JSON string.
+
+    Returns:
+        str: The JSON string representation of the object.
     """
-    Convert a Python object to a JSON string representation.
-    """
-    if my_obj is None:
-        return "null"
-    elif isinstance(my_obj, bool):
-        return "true" if my_obj else "false"
-    elif isinstance(my_obj, int) or isinstance(my_obj, float):
-        return str(my_obj)
-    elif isinstance(my_obj, str):
-        return '"' + my_obj.replace('"', '\\"') + '"'
-    elif isinstance(my_obj, dict):
-        items = []
-        for key, value in my_obj.items():
-            items.append(to_json_string(key) + ":" + to_json_string(value))
-        return "{" + ",".join(items) + "}"
-    elif isinstance(my_obj, list):
-        items = [to_json_string(item) for item in my_obj]
-        return "[" + ",".join(items) + "]"
-    else:
-        raise TypeError("Unsupported type")
+    return json.dumps(my_obj)
+
+if __name__ == '__main__':
+    # Example usage
+    sample_dict = {
+        "name": "Alice",
+        "age": 30,
+        "city": "Wonderland",
+        "is_student": False,
+        "courses": ["Math", "Science"]
+    }
+    json_string = to_json_string(sample_dict)
+    print("JSON representation:", json_string)
