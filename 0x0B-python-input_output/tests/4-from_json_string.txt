@@ -1,0 +1,27 @@
+Convert a JSON string representing a list to a Python list:
+
+    >>> from_json_string = __import__('3-from_json_string').from_json_string
+    >>> json_str = '[1, 2, 3]'
+    >>> s_list = from_json_string(json_str)
+    >>> s_list
+    [1, 2, 3]
+    >>> type(s_list)
+    <class 'list'>
+
+Convert a JSON string representing a dictionary to a Python dictionary:
+
+    >>> json_str = '{"name": "John", "age": 30}'
+    >>> s_dict = from_json_string(json_str)
+    >>> s_dict
+    {'name': 'John', 'age': 30}
+    >>> type(s_dict)
+    <class 'dict'>
+
+Convert a JSON string representing a nested dictionary to a Python dictionary:
+
+    >>> json_str = '{"id": 12, "info": {"age": 36, "average": 3.14}, "active": true}'
+    >>> s_nested_dict = from_json_string(json_str)
+    >>> s_nested_dict
+    {'id': 12, 'info': {'age': 36, 'average': 3.14}, 'active': True}
+    >>> type(s_nested_dict)
+    <class 'dict'>

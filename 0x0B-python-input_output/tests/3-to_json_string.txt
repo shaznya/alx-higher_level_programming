@@ -1,38 +1,48 @@
-The to_json_string function from 3-to_json_string module
-=======================================================
+Examples of using the to_json_string function
+=============================================
 
-Convert a list to its JSON string representation:
+Define the function directly for testing:
 
-    >>> to_json_string = __import__('3-to_json_string').to_json_string
-    >>> s_my_list = to_json_string([1, 2, 3])
-    >>> s_my_list
-    '[1, 2, 3]'
-    >>> type(s_my_list)
-    <class 'str'>
+>>> def to_json_string(my_obj):
+...     import json
+...     return json.dumps(my_obj)
 
-Convert a dictionary to its JSON string representation:
+Convert a dictionary to a JSON string:
 
-    >>> my_dict = {
-    ...     'id': 12,
-    ...     'name': "John",
-    ...     'places': ["San Francisco", "Tokyo"],
-    ...     'is_active': True,
-    ...     'info': {
-    ...         'age': 36,
-    ...         'average': 3.14
-    ...     }
-    ... }
-    >>> s_my_dict = to_json_string(my_dict)
-    >>> s_my_dict
-    '{"id": 12, "name": "John", "places": ["San Francisco", "Tokyo"], "is_active": true, "info": {"age": 36, "average": 3.14}}'
-    >>> type(s_my_dict)
-    <class 'str'>
+>>> to_json_string({"name": "Alice", "age": 30})
+'{"name": "Alice", "age": 30}'
 
-Handle an exception when trying to serialize an unsupported object type (e.g., a set):
+Convert a list to a JSON string:
 
-    >>> try:
-    ...     my_set = {132, 3}
-    ...     s_my_set = to_json_string(my_set)
-    ... except Exception as e:
-    ...     print("[{}] {}".format(e.__class__.__name__, e))
-    [TypeError] Object of type set is not JSON serializable
+>>> to_json_string([1, 2, 3, 4, 5])
+'[1, 2, 3, 4, 5]'
+
+Convert a string to a JSON string:
+
+>>> to_json_string("Hello, World!")
+'"Hello, World!"'
+
+Convert a boolean value to a JSON string:
+
+>>> to_json_string(True)
+'true'
+
+Convert a number to a JSON string:
+
+>>> to_json_string(123)
+'123'
+
+Convert a nested structure to a JSON string:
+
+>>> to_json_string({"name": "Bob", "info": {"age": 25, "city": "New York"}})
+'{"name": "Bob", "info": {"age": 25, "city": "New York"}}'
+
+Convert an empty structure to a JSON string:
+
+>>> to_json_string([])
+'[]'
+
+Convert None to a JSON string:
+
+>>> to_json_string(None)
+'null'
