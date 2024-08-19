@@ -4,7 +4,7 @@
 
 def class_to_json(obj):
     """Returns the dictionary description with simple data structure
-    (list, dictionary, string, integer, and boolean) for JSON serialization of an object.
+    (list, dictionary, string, integer, and boolean) for JSON serialization.
 
     Args:
         obj: An instance of a Class.
@@ -15,7 +15,6 @@ def class_to_json(obj):
     return obj.__dict__
 
 
-# Test example
 if __name__ == '__main__':
     class Student:
         def __init__(self, name, age, is_enrolled):
