@@ -4,7 +4,7 @@
 
 class Student:
     """Represents a student with first name, last name, and age."""
-    
+
     def __init__(self, first_name, last_name, age):
         """Initializes a new Student instance.
 
@@ -26,7 +26,6 @@ class Student:
         return self.__dict__
 
 
-# Example usage
 if __name__ == '__main__':
     student = Student("John", "Doe", 21)
     print(student.to_json())
