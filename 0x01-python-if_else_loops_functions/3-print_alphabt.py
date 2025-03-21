@@ -1,3 +1,7 @@
 #!/usr/bin/python3
-print("".join("{:c}".format(c) for c in range(97, 123)
-              if c not in (101, 113)), end="")
+
+# Print lowercase ASCII alphabet excluding 'q' and 'e' in one print statement
+print("".join(
+    "{:c}".format(letter) for letter in range(97, 123)
+    if letter not in (113, 101)
+), end="")
